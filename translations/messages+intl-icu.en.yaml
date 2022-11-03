@@ -1,0 +1,37 @@
+menu :
+    1 : Home
+    2 : Demos
+    3 : Song translations
+    4 : Contact me! 
+form_labels :
+    contact_me:
+        0: Contact Form
+        1: First name
+        2: Last name
+        3: Email
+        4: Subject
+        5: Content
+        6: Send
+form_errors :
+    contact_me:
+        1 : '"{field_label}" can not be blank.'
+        2 : 'The value entered is not an email address.'
+        3 : 'The honeypot field has been compromised.'
+form_placeholders :
+    contact_me:
+        1 : Tell me about yourself, your project, and don't forget to mention your favorite bug!
+flash_messages:
+    1: Your email has been sent. We expect to get back to you shortly !
+    2: An error has ocurred and your email was not sent. Please don't give up though, and consider contacting me directly through LinkedIn.
+footer:
+    1: Legal notice
+legal_notice:
+    1: 'Site owner name: {site_owner_name}'
+    2: 'Site owner address: {site_owner_address}'
+    3: 'Immatriculation: {site_owner_siret}'
+    4: 'TVA immatriculation: {site_owner_tva_immatriculation}'
+    5: 'Information about the Host of the site: {host_information}'
+    6: 'Vector images were created or come from Pixabay, the latter are free of royalties. All other images have been modified and originate from photographs within the public domain.'
+    7: 'Credits due: <ul><li>To jojo-ojoj from DeviantArt for the image ''Seamless texture 6'', used for the background texture of the main page.</li></ul>'
+dev:
+    1: Page under construction

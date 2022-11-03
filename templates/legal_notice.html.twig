@@ -1,0 +1,20 @@
+{% extends './base.html.twig' %}
+  
+{% block body %}
+<div class="content legal_notice_content">
+    <div class="shadowCard">
+        <h1>
+            {{ 'footer.1'|trans }}
+        </h1>        
+        <p> {{ 'legal_notice.1'|trans({'%site_owner_name%': owner.name }) }} </p>
+        <p> {{ 'legal_notice.2'|trans({'%site_owner_address%': owner.address }) }} </p>
+        <p> {{ 'legal_notice.3'|trans({'%site_owner_siret%': owner.siret }) }} </p>
+        <p> {{ 'legal_notice.4'|trans({'%site_owner_tva_immatriculation%': owner.tva_immatriculation }) }} </p>
+        <p> {{ 'legal_notice.5'|trans({'%host_information%': host_information }) }} </p>
+        <hr />
+        <p> {{ 'legal_notice.6'|trans }}
+         {{ 'legal_notice.7'|trans|raw }} </p>
+
+    </div>
+</div>
+{% endblock body %}

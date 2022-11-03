@@ -1,0 +1,10 @@
+{% extends './base.html.twig' %}
+ 
+{% block before_menu %}
+     {% include './mainpage/modules/accordion_carousel.html.twig' with {'intro': intro, 'bugs': bugs}  %}
+{% endblock %}
+
+{% block body %}
+     {% include './mainpage/modules/my_services.html.twig' with {'services': services}  %}
+     {% include './mainpage/modules/contact_me_form.html.twig' with {'form': form}  %}
+{% endblock body %}

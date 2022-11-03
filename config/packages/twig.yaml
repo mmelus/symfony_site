@@ -1,0 +1,18 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes: ['layout/form_div_layout_2.html.twig']
+    globals:
+        linkedin:
+            en: '%app.admin_linked_en%'
+            fr: '%app.admin_linked_fr%'
+            es: '%app.admin_linked_es%'
+        owner: 
+            name: '%app.owner.name%'
+            address: '%app.owner.address%'
+            siret: '%app.owner.siret%'
+            tva_immatriculation: '%app.owner.tva_immatriculation%'
+        host_information: '%app.host_information%'
+
+when@test:
+    twig:
+        strict_variables: true

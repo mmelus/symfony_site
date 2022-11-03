@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <title>{% block title %}Love-bugs{% endblock %}</title>
+        <script src="https://kit.fontawesome.com/d34493cd63.js" crossorigin="anonymous"></script>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet"><link rel="icon" href="{{ asset('images/logo.png') }}"/>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+      {% block before_menu %}{% endblock %}
+      {% include './menu.html.twig' %}
+      {% block body %}{% endblock %}
+      {% include './footer.html.twig' %}
+    </body>
+</html>

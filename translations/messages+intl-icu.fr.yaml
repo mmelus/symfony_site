@@ -1,0 +1,37 @@
+menu :
+    1 : Accueil
+    2 : Demos
+    3 : Traduction de chansons
+    4 : Contactez-moi ! 
+form_labels :
+    contact_me:
+        0 : Formulaire de contact
+        1 : Prénom
+        2 : Nom de famille
+        3 : Email
+        4 : Sujet
+        5 : Contenu
+        6 : Envoyer
+form_errors :
+    contact_me:
+        1 : '"{field_label}" ne peut pas être null.'
+        2 : 'La valeur proposée n''est pas un email.'
+        3 : 'Le champ honeypot a été compromis.'
+form_placeholders :
+    contact_me:
+        1 : Présentez-vous, votre projet et n'oubliez pas de mentionner votre insecte préféré !
+flash_messages :
+    1 : Votre email a été envoyé. Nous espérons vous répondre sous peu !
+    2 : Une erreur est survenue et votre email n'a pas été envoyé. N'abandonnez pas pour autant et envisagez de me contacter directement sur LinkedIn.
+footer:
+    1: Mentions légales
+legal_notice:
+    1: 'Nom et Prénom du propriétaire du site: {site_owner_name}'
+    2: 'Adresse du propriétaire du site: {site_owner_address}'
+    3: 'Immatriculation : {site_owner_siret}'
+    4: 'Numéro de TVA : {site_owner_tva_immatriculation}'
+    5: 'Identité de l''hébergeur du site : {host_information}'
+    6: 'Certaines images vectorielles ont été crées et d''autres proviennent de Pixabay, ces dernières sont libres de droits. Toutes les autres images ont été modifiées et proviennent de photographies issues du domaine public.'
+    7: 'Attributions dues : <ul><li>À jojo-ojoj de DeviantArt pour l''image ''Seamless texture 6'', utilisé comme texture de fond sur la page principale.</li></ul> ' 
+dev:
+    1: Page en construction

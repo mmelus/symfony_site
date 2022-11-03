@@ -1,0 +1,269 @@
+@use 'variables' as v;
+
+//////////////////////////////////
+///       Accordion           ////
+//////////////////////////////////
+body{
+    color:v.$FontColor;
+    font-family: 'Lato', sans-serif;
+}
+.accordion-grandparent{
+    width:100%;
+    height:100vh;
+    height: calc(var(--bugs-vh, 1vh) * 100);
+    background-image: url("/public/images/texture.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+.accordion-parent {
+    display:flex;
+    background-color: rgba(v.$ZeroColor, 0.80);
+    height:100%;
+}
+.accordion {
+    transition: 0.4s;
+    color: rgba(v.$FontColor, 0.7);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    outline: none;
+    &:hover{
+        font-size: 1.5em;
+    }
+  }
+.panel {
+    background-color: white;
+    max-width: 0;
+    overflow: hidden;
+    transition: flex 0.7 ease-in;
+    display: flex;
+    align-items: center;
+    position:relative;
+    div{
+        padding:4%;
+        padding-bottom:2%;
+        z-index: 2;
+        background-color: rgb(255 255 255 / 10%);
+        border-radius: 25px;
+        margin: 2%;
+        align-self: end;
+        width: 100%;
+        h3{
+            margin-block-start: 0;
+        }
+    }
+    img{
+        position: absolute;
+        filter: sepia(0.7);
+    }
+    &:last-child{
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+    }
+}
+@media only screen and (min-width: v.$breakpoint-md) {
+    .panel img{
+        top: 50%;
+        left: 50%;
+        opacity: 50%;
+        transform: translate(-50%, -50%);
+    }
+    /// libellule
+    .panel div{
+        width:70%;
+        align-self: baseline;
+    }
+    .panel.dragonfly div {
+        align-self: end;
+        width:45%;
+        margin-left:55%;
+        margin-bottom: 5%;
+    }
+    .panel.butterfly img {
+        top: 59%;
+    }
+    .panel.butterfly div {
+        width:55%;
+
+    }
+    .panel.cricket div {
+        align-self: baseline;
+        margin-left: 15%;
+    }
+    .panel.katydid div {
+        align-self: end;
+    }
+    .panel.katydid img {
+        top: 42%;
+    }
+}
+//////////////////////////////////
+///       Carrousel           ////
+//////////////////////////////////
+@media only screen and (max-width: v.$breakpoint-md) {
+    .panel img{
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .panel div{
+        margin-bottom: 7vh;
+        max-height: 89vh;
+        max-height: -webkit-fill-available;
+        overflow-y: scroll;
+    }
+}
+#carousel-buttons{
+    margin-top: -5vh;
+    z-index: 5;
+    position: relative;
+}
+.carousel {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+//////////////////////////////////
+///          Services         ////
+//////////////////////////////////
+.services-parent{
+    overflow:hidden;
+    position:relative;
+    box-shadow: 0px 0.2rem 1rem 0px rgb(0 0 0 / 29%);
+}
+.services{
+    display:block;
+    overflow:hidden;
+    font-family: 'Roboto', sans-serif;
+    background: url("/public/images/seamless_3_yellow.png");
+    background-color: v.$FourthColor;
+    background-repeat: repeat;
+    background-size: 20em;
+    &:first-child>h1{
+        background-color: rgb(235 226 213 / 95%);
+        border-radius: 0.2em;
+        border: 0.17em double v.$FourthColor;
+        color: v.$FourthColor;
+        text-align: center;
+        letter-spacing: 0.3rem;
+        font-weight: 0;
+        width: 110%;
+        margin-left: -6%;
+        margin-bottom: 3rem;
+    }
+    >.container{
+        justify-content: space-between;
+        text-align: justify;
+        h1{
+            text-align: left;
+        }
+        &>div{
+            &:first-child{
+                background-color: rgba(v.$FifthColor,0.95);
+            }
+            background-color: rgba(v.$SecondaryColor,0.95);
+        }
+        &:last-child>div{
+            &:first-child{
+                background-color: rgba(v.$PrimaryColor,0.95);
+            }
+            background-color: rgba(v.$TertiaryColor,0.95);
+        }
+        .one-service{
+            padding:1.5em;
+            box-shadow: -5px 0rem 1rem rgb(0 0 0 / 29%);
+            border-radius: 0.2em;
+            border: 0.4em double v.$FontColor;
+            
+            div:first-child{
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height:16em;
+                background-color: rgb(236 235 234);
+                border-radius: 3em;
+                padding: 1em 0;
+                border: 0.7em double #344777;
+                &:before{
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0%;
+                    left: 0%;
+                    //background:rgb(51 74 102);
+                }
+            }
+            div:last-child{
+                padding-top:3em;
+            }
+        }
+    }
+}
+@media (max-width: v.$breakpoint-md) {
+    .services:first-child>h1{
+        margin-bottom:0;
+        width: 110vw;
+        margin-left: -10%;
+     }
+    .container{
+        &:last-child{
+            margin-top: 0;
+        }
+        .one-service{
+            margin-top:3em;
+        }
+    }
+}
+@media (min-width: v.$breakpoint-md) {
+    .services{
+        >.container{
+            &:last-child{
+                margin-top: 3em;
+            }
+        }
+    }
+}
+//////////////////////////////////
+///          FORM             ////
+//////////////////////////////////
+#contact-me-form, .legal_notice_content{ 
+    background-color: rgba(v.$PrimaryColor, 0.8);
+}
+.shadowCard {
+    box-shadow: -15px 1rem 1rem rgb(0 0 0 / 29%);
+    padding: 4px;
+    background-color:rgba(v.$FourthColor, 0.9);
+    border-radius: 15px;
+    padding: 1em;
+    align-self: center;
+    width: 100%;
+    min-height: 20em;;
+  }
+textarea{
+    max-width: 100%;
+}
+.button-right-parent{
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.legal_notice_content{
+    min-height: 70vh;
+}
+.services-general{
+    background-color: v.$FourthColor;
+    padding: 2em;
+    text-align: center;
+}

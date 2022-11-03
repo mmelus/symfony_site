@@ -1,0 +1,25 @@
+<div id="navbar">
+ <div id="burger-menu" class="dnone-above-md">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div id="navigation" class="container">
+    <div style="height:100%;padding-left:1em;" class="dnone-below-md"><img src="{{ asset('images/logo.png') }}" alt="logo"></div><a href="{{ path('main_page') }}">{{ 'menu.1'|trans }}</a>
+    <div class="dropdown">
+      <a class="dropdown-main">{{ 'menu.2'|trans }} <i class="fas fa-angle-down"></i></a>
+      <ul class="dropdown-content d-none">
+        <li><a href="{{ path('tango_list') }}">{{ 'menu.3'|trans }}</a></li>
+      </ul>
+    </div>
+    <a href="{{ path('main_page') }}#contact-me-form">{{ 'menu.4'|trans }}</a>
+  </div>
+    <div id="language-selector">
+    {% set currentRoute = app.request.attributes.get('_route') %}
+    {% set currentParams = app.request.attributes.get('_route_params') %}
+
+    {% set paramsEn = currentParams|merge({'_locale':'en'})  %}
+    <a href="{{ path(currentRoute, paramsEn) }}">en</i></a> |  
+    
+    {% set paramsFR = currentParams|merge({'_locale':'fr'})  %}
+    <a href="{{ path(currentRoute, paramsFR) }}">fr</i></a>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="services-parent">
+    <div class="services content">
+    <h1>{{ general.first.title|raw }}</h1>
+    {% for row in services|batch(2) %}
+        <div class="container">
+            {% for service in row %}
+            <div class="six columns one-service {{ service.contentcode|lower }}">
+                <div>
+                    <img  src="{{ asset('images/services/' ~ service.contentcode|lower ~ '.png') }}" alt="{{ service.contentcode|lower }}">
+                </div>
+                <div>
+                    <h1>{{ service.title|raw }}</h1>
+                    <span>{{ service.content|raw }}</span> 
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+      <div class="services-general">{{ general.first.content|raw }}</div>
+</div>

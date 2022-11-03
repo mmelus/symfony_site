@@ -1,0 +1,24 @@
+<div id="footer">
+    <div class="container">
+        <div id="social" class="four columns">
+            <div id="github">
+              <a href="https://github.com/mmelus?tab=repositories" target="_blank">
+                  <img src="{{ asset('images/github.png') }}" alt="github repositories">
+              </a>
+            </div>
+            <div id="social-networks">
+                {% set href = ( app.request.locale == 'en')? linkedin.en : ( app.request.locale == 'fr')? linkedin.fr : linkedin.es %}
+                <a href={{href}} target="_blank">
+                    <img src="{{ asset('images/linkedin_logo.png') }}" alt="linked-in">
+                </a>
+            </div>
+        </div>
+        <div class="four columns">
+            <div id="logo">
+                <img src="{{ asset('images/logo.png') }}" alt="logo">
+            </div>
+        </div>
+        <div class="four columns"><a href="{{ path('legal_notice') }}">{{ 'footer.1'|trans }}</a></br>©2022-2023</div>
+    </div>
+
+</div>

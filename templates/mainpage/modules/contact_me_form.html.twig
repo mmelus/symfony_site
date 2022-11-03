@@ -1,0 +1,53 @@
+<div class="content" id="contact-me-form">
+  <div class="shadowCard twelve columns">
+  {# read and display all flash messages #}
+  {% for label, messages in app.flashes %}
+      {% for message in messages %}
+          <div class="flash-{{ label }}">
+              {{ message }}
+          </div>
+      {% endfor %}
+  {% endfor %}
+  <div id="contact-form-title">{{ 'form_labels.contact_me.0'|trans }}</div>
+  {{ form_start(form) }}
+    <div class="container">
+      <div class="six columns">
+        {{ form_label(form.firstName) }}
+        {{ form_widget(form.firstName) }}
+     </div>
+      <div class="six columns">
+        {{ form_label(form.lastName) }}
+        {{ form_widget(form.lastName) }}
+        {{ form_errors(form.lastName) }}
+      </div>
+      <div class="d-none">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        {{ form_errors(form.email)}}
+      </div>
+    </div>
+    <div class="container">
+      <div class="six columns">
+        {{ form_label(form.information) }}
+        {{ form_widget(form.information) }}
+        {{ form_errors(form.information)}}   
+      </div>
+      <div class="six columns">
+        {{ form_label(form.subject) }}
+        {{ form_widget(form.subject) }}
+        {{ form_errors(form.subject)}}
+      </div>
+    </div>
+    <div class="container">
+      <div class="twelve columns">
+        {{ form_label(form.content) }}
+        {{ form_widget(form.content) }}
+        {{ form_errors(form.content)}}
+      </div>
+    </div>
+    <div class="button-right-parent">
+          {{ form_widget(form.send) }}
+    </div>
+  {{ form_end(form) }}
+  </div>
+</div>

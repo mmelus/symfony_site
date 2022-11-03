@@ -1,0 +1,31 @@
+<div class="accordion-grandparent">
+<div class="accordion-parent">
+    {% for bug in bugs %}
+        {% set lightness = 55 - ( (loop.index - 1) * 13)  %}
+        {% set buttonLightness = 3 + ( (loop.index) * 13)  %}
+        <div class="panel {{ bug.contentcode|lower }}" style="background-color:#ffffff{{ lightness }};">
+
+            <img  src="{{ asset('images/bugs/' ~ bug.contentcode|lower ~ '.png') }}" alt="{{ bug.contentcode|lower }}">
+            <div>
+                <h3>{{ bug.title|raw }}</h3>
+                <span>{{ bug.content|raw }}</span> 
+            </div>
+        </div>
+        <button class="accordion dnone-below-md" style="background-color:#ffffff{{ buttonLightness }};">◍</button>
+    {% endfor %}
+    <div class="panel open-panel" style="background-color:transparent;max-width:100%;width:100vw;">
+         
+            <div>
+                <h1>{{ intro[0].title|raw }}</h1>
+                {{ intro[0].content|raw }}
+            </div>
+            <button class="accordion d-none active"></button>
+    </div>
+</div>
+<div id="carousel-buttons" class="dnone-above-md" style="text-align:center">
+    {% for bug in bugs %}
+    <span class="carousel"></span>
+    {% endfor %}
+     <span class="carousel active"></span> 
+</div>
+</div>
