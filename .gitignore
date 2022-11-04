@@ -29,6 +29,8 @@ yarn-error.log
 
 
 ###> GITHUB ###
+#/.github
+#LICENSE
 /.env
 /.env.test
 /public/images

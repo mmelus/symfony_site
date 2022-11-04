@@ -11,9 +11,10 @@ use App\Service\MailerService;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Exception;
 
+#[Route(path: '/{_locale}', requirements: ['_locale' => 'en|fr', ])]
 class MainController extends AbstractController
 {
-    #[Route(path: '/{_locale}', name: 'main_page', requirements: ['_locale' => 'en|fr', ], methods:['GET','POST'] )]
+    #[Route(path: '/', name: 'main_page', methods:['GET'] )]
     public function MainPage(Request $request, ContentRepository $contentRepository): Response
     {
         $bugs = $contentRepository->getBugs($request->getLocale());
@@ -40,7 +41,7 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route(path: '/{_locale}/contact_me', name: 'contact_me', requirements: ['_locale' => 'en|fr', ],methods:['POST'] )]
+    #[Route(path: '/contact_me', name: 'contact_me', methods:['POST'] )]
     public function SendEmail(Request $request,MailerService $mailerService, TranslatorInterface $translator): Response
     {
         $form = $this->createForm(ContactMeType::class);
@@ -61,7 +62,7 @@ class MainController extends AbstractController
         }
     }
 
-    #[Route(path: '/{_locale}/legal_notice', name: 'legal_notice', requirements: ['_locale' => 'en|fr', ],methods:['GET'] )]
+    #[Route(path: '/legal_notice', name: 'legal_notice' ,methods:['GET'] )]
     public function LegalNotice(Request $request,MailerService $mailerService, TranslatorInterface $translator): Response
     {
         return $this->render('legal_notice.html.twig');
